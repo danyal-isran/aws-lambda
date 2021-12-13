@@ -1,0 +1,42 @@
+{
+  "name": "upstart-techtalk-lambda",
+  "version": "1.0.0",
+  "description": "Upstart Techtalk AWS Lambda Demo",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "start": "ts-node ./src/main.ts",
+    "build": "tsc",
+    "test": "ts-mocha -p tsconfig.json test/**/*.ts",
+    "clean": "rm -rf ./dist",
+    "zip": "cd dist && cd src && rm -f lambda.zip && zip lambda.zip . -q -r -x '*.git'",
+    "package": "npm run clean && npm run build && npm run zip"
+  },
+  "keywords": [],
+  "author": "Danyal Isran",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.85",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.11",
+    "@types/sinon": "^10.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-plugin-import": "^2.25.3",
+    "mocha": "^9.1.3",
+    "prettier": "^2.5.1",
+    "sinon": "^12.0.1",
+    "ts-mocha": "^8.0.0",
+    "ts-node": "^10.4.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1043.0"
+  }
+}
