@@ -1,6 +1,6 @@
 {
   "name": "upstart-techtalk-lambda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Upstart Techtalk AWS Lambda Demo",
   "main": "index.js",
   "type": "module",
